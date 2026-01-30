@@ -1,6 +1,6 @@
 import { FlannelPattern, FlannelStrip } from "@/components/flannel-pattern"
 import { RuggedTerrain } from "@/components/rugged-terrain"
-import { Mail, MapPin, Phone } from "lucide-react"
+import { Mail, Phone } from "lucide-react"
 
 export default function Home() {
   return (
@@ -47,9 +47,9 @@ export default function Home() {
         {/* Contact section */}
         <footer className="relative z-20 bg-card/80 backdrop-blur-sm">
           <div className="px-6 md:px-10 lg:px-16 py-10 md:py-14">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
               {/* Brand column */}
-              <div className="lg:col-span-1">
+              <div>
                 <div className="flex items-center gap-3 mb-4">
                   <div className="relative w-6 h-6 rounded overflow-hidden">
                     <FlannelPattern className="absolute inset-0" />
@@ -83,38 +83,6 @@ export default function Home() {
                     >
                       <Phone className="w-4 h-4 group-hover:scale-110 transition-transform" />
                       <span className="text-sm">+47 123 45 678</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Location column */}
-              <div>
-                <h2 className="text-sm font-medium text-foreground uppercase tracking-wider mb-4">
-                  Location
-                </h2>
-                <div className="flex items-start gap-3 text-muted-foreground">
-                  <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
-                  <address className="text-sm not-italic">
-                    Norway
-                  </address>
-                </div>
-              </div>
-
-              {/* Links column */}
-              <div>
-                <h2 className="text-sm font-medium text-foreground uppercase tracking-wider mb-4">
-                  Connect
-                </h2>
-                <ul className="space-y-3">
-                  <li>
-                    <a
-                      href="https://linkedin.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      LinkedIn
                     </a>
                   </li>
                 </ul>
