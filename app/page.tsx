@@ -27,17 +27,6 @@ export default function Home() {
               <span className="text-balance">Rugged AS</span>
             </h1>
 
-            <p className="mt-6 md:mt-8 text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
-              Built to last. Norwegian craftsmanship meets modern solutions. We create things that endure.
-            </p>
-
-            {/* Flannel accent strip */}
-            <div className="mt-10 md:mt-12 flex items-center gap-4">
-              <div className="relative h-3 w-32 rounded overflow-hidden">
-                <FlannelPattern className="absolute inset-0" />
-              </div>
-              <span className="text-sm text-muted-foreground uppercase tracking-widest">Est. 2024</span>
-            </div>
           </div>
         </div>
 
@@ -56,9 +45,6 @@ export default function Home() {
                   </div>
                   <span className="text-foreground font-semibold">Rugged AS</span>
                 </div>
-                <p className="text-sm text-muted-foreground">
-                  Norwegian limited company (AS)
-                </p>
               </div>
 
               {/* Contact column */}
