@@ -1,6 +1,6 @@
 import { FlannelPattern, FlannelStrip } from "@/components/flannel-pattern"
 import { RuggedTerrain } from "@/components/rugged-terrain"
-import { Mail, Phone } from "lucide-react"
+import { Mail } from "lucide-react"
 
 export default function Home() {
   return (
@@ -74,15 +74,6 @@ export default function Home() {
                     >
                       <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
                       <span className="text-sm">hello@rugged.as</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="tel:+4712345678"
-                      className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group"
-                    >
-                      <Phone className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                      <span className="text-sm">+47 123 45 678</span>
                     </a>
                   </li>
                 </ul>
