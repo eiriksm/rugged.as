@@ -4,11 +4,11 @@ A minimal static site for Rugged AS.
 
 ## Overview
 
-This project uses a custom static build system that generates a single, self-contained HTML file with inlined CSS. The site features:
+This project uses Vite for development and building. The site features:
 
 - Animated terrain background using HTML5 Canvas
 - Tailwind CSS v4 for styling
-- Single-file output for easy deployment
+- Vite for fast development and optimized production builds
 
 ## Getting Started
 
@@ -20,22 +20,22 @@ npm install
 
 ### Development Mode
 
-Start the development server with live reload:
+Start the Vite development server with hot module replacement:
 
 ```bash
 npm run dev
 ```
 
-This will:
-1. Build the static site
-2. Start a local web server at `http://localhost:3000`
-3. Watch for changes in `build-scripts/template.html` and `build-scripts/input.css`
-4. Automatically rebuild and reload the browser when changes are detected
+This will start a local dev server at `http://localhost:5173` with:
+- **Hot Module Replacement (HMR)**: Instant updates without full page reloads
+- **Fast startup**: Vite starts in milliseconds
+- **On-demand compilation**: Only compiles files as they're requested
 
-The dev server features:
-- **Live reload**: Changes to template or CSS automatically refresh the browser
-- **Instant feedback**: See your changes in real-time
-- **Build validation**: Console shows build status and any errors
+You can also preview the production build locally:
+
+```bash
+npm run preview
+```
 
 ### Production Build
 
@@ -45,7 +45,8 @@ Build the static site for production:
 npm run build
 ```
 
-The build process will:
-1. Generate CSS using PostCSS with Tailwind
-2. Embed the CSS inline into the HTML template
-3. Output a single `dist/index.html` file
+Vite will:
+1. Process and optimize your HTML, CSS, and JavaScript
+2. Generate CSS using PostCSS with Tailwind CSS v4
+3. Bundle and minify all assets
+4. Output optimized files to the `dist/` directory
