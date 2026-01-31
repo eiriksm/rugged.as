@@ -18,7 +18,28 @@ Install dependencies:
 npm install
 ```
 
-Build the static site:
+### Development Mode
+
+Start the development server with live reload:
+
+```bash
+npm run dev
+```
+
+This will:
+1. Build the static site
+2. Start a local web server at `http://localhost:3000`
+3. Watch for changes in `build-scripts/template.html` and `build-scripts/input.css`
+4. Automatically rebuild and reload the browser when changes are detected
+
+The dev server features:
+- **Live reload**: Changes to template or CSS automatically refresh the browser
+- **Instant feedback**: See your changes in real-time
+- **Build validation**: Console shows build status and any errors
+
+### Production Build
+
+Build the static site for production:
 
 ```bash
 npm run build
