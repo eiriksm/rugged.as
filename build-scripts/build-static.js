@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
-const juice = require('juice');
 
 const BUILD_DIR = path.join(__dirname, '..');
 const TEMPLATE_PATH = path.join(__dirname, 'template.html');
@@ -39,27 +38,15 @@ let html = fs.readFileSync(TEMPLATE_PATH, 'utf8');
 console.log('🎨 Reading generated CSS...');
 const css = fs.readFileSync(CSS_OUTPUT_PATH, 'utf8');
 
-// Step 4: Inline the CSS
-console.log('✨ Inlining styles...');
+// Step 4: Embed the CSS
+console.log('✨ Embedding styles...');
 
-// Replace the placeholder with a style tag
-html = html.replace('<!-- STYLES_PLACEHOLDER -->', `<style>${css}</style>`);
-
-// Use juice to inline styles from the style tag into elements
-// Note: juice works better with actual style attributes, but for Tailwind utility classes,
-// we want to keep the classes and also add the full CSS in a style tag
-const inlinedHtml = juice(html, {
-  extraCss: css,
-  inlinePseudoElements: true,
-  preserveMediaQueries: true,
-  preserveFontFaces: true,
-  preserveKeyframes: true,
-  removeStyleTags: false, // Keep the style tag for pseudo-classes and media queries
-});
+// Replace the placeholder with a style tag containing all the CSS
+const finalHtml = html.replace('<!-- STYLES_PLACEHOLDER -->', `<style>${css}</style>`);
 
 // Step 5: Write the final HTML file
 console.log('💾 Writing static HTML file...');
-fs.writeFileSync(STATIC_OUTPUT_PATH, inlinedHtml, 'utf8');
+fs.writeFileSync(STATIC_OUTPUT_PATH, finalHtml, 'utf8');
 
 // Clean up temporary CSS file
 console.log('🧹 Cleaning up...');
