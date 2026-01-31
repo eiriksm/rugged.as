@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:static": "node build-scripts/build-static.js",
     "start": "next start",
     "lint": "eslint"
   },
@@ -65,8 +66,11 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cheerio": "^1.2.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "juice": "^11.1.0",
+    "postcss-cli": "^11.0.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
